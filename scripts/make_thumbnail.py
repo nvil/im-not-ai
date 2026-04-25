@@ -76,41 +76,37 @@ label_y = 218
 d.text((PAD, label_y), "BEFORE  (AI)", font=label_f, fill=STRIKE)
 d.text((W // 2 + 40, label_y), "AFTER  (사람)", font=label_f, fill=AFTER)
 
-# Row 1
+# Row 1 — 수동태
 y1 = 260
-# BEFORE line
 x = PAD
-x = plain(x, y1, "AI 기술을 ", body_f)
-x = strike_text(x, y1, "통해", body_f)
-x = plain(x, y1, " 효율을 높", body_f)
-x = strike_text(x, y1, "일 수 있다", body_f)
+x = plain(x, y1, "지속될 것으로 ", body_f)
+x = strike_text(x, y1, "보여진다", body_f)
+x = plain(x, y1, ".", body_f)
 
-# arrow in column gap
 arrow_x = W // 2 - 30
 d.text((arrow_x, y1 - 2), "→", font=F("bold", 40), fill=MUTED)
 
-# AFTER line
-plain(W // 2 + 40, y1, "AI 기술로 효율을 높인다", body_f, color=AFTER)
+plain(W // 2 + 40, y1, "계속될 것이다.", body_f, color=AFTER)
 
-# Row 2
+# Row 2 — 대구 (단순한 X가 아닌 Y)
 y2 = 332
 x = PAD
-x = strike_text(x, y2, "결론적으로", body_f)
-x = plain(x, y2, ", 이는 ", body_f)
-x = strike_text(x, y2, "시사하는 바가 크다", body_f)
+x = strike_text(x, y2, "단순한", body_f)
+x = plain(x, y2, " 트렌드가 ", body_f)
+x = strike_text(x, y2, "아닌", body_f)
+x = plain(x, y2, " 흐름이다.", body_f)
 
 d.text((arrow_x, y2 - 2), "→", font=F("bold", 40), fill=MUTED)
-plain(W // 2 + 40, y2, "의미는 분명하다", body_f, color=AFTER)
+plain(W // 2 + 40, y2, "시대가 바뀌고 있다.", body_f, color=AFTER)
 
-# Row 3
+# Row 3 — 지시대명사 (이것은/그것은)
 y3 = 404
 x = PAD
-x = strike_text(x, y3, "~에 있어서", body_f)
-x = plain(x, y3, " ", body_f)
-x = strike_text(x, y3, "판단되어진다", body_f)
+x = strike_text(x, y3, "이것은", body_f)
+x = plain(x, y3, " 변화의 신호이다.", body_f)
 
 d.text((arrow_x, y3 - 2), "→", font=F("bold", 40), fill=MUTED)
-plain(W // 2 + 40, y3, "~에서, 판단한다", body_f, color=AFTER)
+plain(W // 2 + 40, y3, "변화가 시작됐다.", body_f, color=AFTER)
 
 
 # ---------- Stats row ----------
