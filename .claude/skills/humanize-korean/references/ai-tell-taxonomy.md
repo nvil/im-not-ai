@@ -1,4 +1,4 @@
-# AI 한글 티 분류 체계 v1.1 (Korean AI-Tell Taxonomy)
+# AI 한글 티 분류 체계 v1.2 (Korean AI-Tell Taxonomy)
 
 LLM(ChatGPT·Claude·Gemini 등)이 생성한 한글 글에서 반복적으로 관찰되는 "AI 티" 패턴을 10개 대분류 × 서브 패턴으로 정리한다. 탐지기·윤문가·리뷰어가 공유하는 단일 진실 원천(SSOT). 각 패턴마다 (1) 정의, (2) 시그니처 예문, (3) 심각도(S1 결정적 / S2 강함 / S3 약함), (4) 윤문 처방을 제공한다.
 
@@ -422,4 +422,11 @@ J. 시각 장식 남용
   - `D-6` 완결 공식형 결말 "~할 때입니다 / 시점입니다"
   - `F-5` "~적 N" 복합 추상어 체인 (에이전트적 자율성·기술적 토대)
   - `H-4` 재정의 접속사 "즉" 남발
+- **v1.2** (2026-04-25): Issue #1(simonsez9510) 후속 — 패턴 신설 0건, **권한 위계와 운영 체계 추가**:
+  - **권한 위계 §1~§6 신설** — 객관 분류 vs 작가 voice profile의 권한 경계 명문화. opt-in 명시 주입, 패턴 ID 단위 무력화만 허용, 자유 텍스트 mandate 금지, A-8·C-5·D-1~D-6 무력화 불가, naturalness-reviewer 분리 검증층 보존, 회귀 게이트 정책
+  - **임계 완화 multiplier 캡표** — 일반 ≤ 2.0, D-1~D-6 ≤ 1.5, A-8·C-5 = 1.0 고정 (임계 우회를 통한 사실상 무력화 방지)
+  - **`author-context.yaml` 스키마** 신설 (`references/author-context-schema.md`) — opt-in voice profile 주입 양식, Schema validator 책임(무력화 불가 disable 거부, multiplier 캡 위반 거부, prompt injection escape character 검증), Telemetry 정책(`voice_profile_log.json`)
+  - **에이전트 정의 갱신** — detector·rewriter·auditor에 voice profile 주입, naturalness-reviewer 의도적 미주입 명문화
+  - **경로 토큰화** — SKILL.md 절대 경로 제거, `_workspace/`는 cwd 기준
+  - **다운스트림 caller reference** — `references/proposals/`(PR #3, simonsez9510 어댑터 reference, 메인테이너 SSOT 외부 격리)
 - 확장 원칙: 실전 입력에서 재현 2회 이상 + 인간 필자가 거의 안 쓰는 패턴만 서브 항목 추가.
