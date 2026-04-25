@@ -117,6 +117,10 @@ claude
 
 ### 3. AI가 쓴 한글 글 붙여넣고 부탁하기
 
+세 가지 방법 중 편한 쪽으로 사용합니다.
+
+**방법 A — 자연어 한 문장 (가장 쉬움)**
+
 평소 말투 그대로 쓰면 됩니다:
 
 ```
@@ -132,7 +136,17 @@ claude
 - "번역투 제거"
 - "한글 AI 윤문"
 
-명령어·슬래시·옵션 없이 **자연어 한 문장으로 충분합니다.**
+**방법 B — 슬래시 커맨드** *(v1.2~)*
+
+```
+/humanize [윤문할 텍스트 또는 파일 경로]
+```
+
+옵션을 인자 끝에 자연어로 적을 수 있습니다: `장르: 칼럼`, `강도: 적극`, `최소심각도: S1`. 결과가 마음에 안 들면 `/humanize-redo "번역투만 다시"` 같은 식으로 재실행. 두 커맨드 정의: [`commands/`](.claude/commands/)
+
+**방법 C — Plugin / 자동 설치기** *(@gaebalai 포크)*
+
+[`gaebalai/im-not-ai`](https://github.com/gaebalai/im-not-ai) 포크가 Claude Code Plugin/Marketplace 규격으로 패키징되어 있습니다. `/plugin install humanize-korean@epoko77-ai-plugins` 또는 `./scripts/install.sh --target ~/my-project` 한 줄로 설치 가능합니다. 본체 정식 Plugin 지원은 v1.3 검토 중입니다 ([Issue 추적 예정](https://github.com/epoko77-ai/im-not-ai/issues)).
 
 ### 4. 결과 확인
 
